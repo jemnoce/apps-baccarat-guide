@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐 · 信息卡片</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f9f8f6;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2.8rem 1.5rem 4rem;
+        }
+        /* 主视觉 — 极简字标 */
+        .hero {
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #161616;
+            margin-bottom: 0.4rem;
+        }
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #6b6b6b;
+            border-left: 3px solid #c7a57b;
+            padding-left: 0.85rem;
+            margin-top: 0.2rem;
+        }
+        /* 卡片系统 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin: 2.5rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+            border: 1px solid #ecebe8;
+        }
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .card h2 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.6rem;
+            color: #1c1c1c;
+        }
+        .card h2 i {
+            font-style: normal;
+            background: #eae5de;
+            padding: 0 0.4rem;
+            border-radius: 6px;
+            font-weight: 400;
+            color: #4d3f30;
+            font-size: 0.85rem;
+            margin-left: 0.3rem;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #3e3e3e;
+            margin-bottom: 0.4rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.6rem;
+            margin-top: 0.6rem;
+        }
+        .tag {
+            background: #f1efe9;
+            color: #3a3a3a;
+            font-size: 0.78rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            letter-spacing: 0.01em;
+        }
+        .faq-mini {
+            margin-top: 2.4rem;
+            border-top: 1px solid #e3ded7;
+            padding-top: 1.8rem;
+        }
+        .faq-mini h3 {
+            font-size: 0.95rem;
+            font-weight: 550;
+            color: #2b2b2b;
+            margin-bottom: 0.75rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            font-weight: 550;
+            display: inline-block;
+            font-size: 0.88rem;
+            color: #3d362d;
+        }
+        .faq-item p {
+            color: #4f4f4f;
+            font-size: 0.9rem;
+            margin-top: 0.1rem;
+        }
+        .link-sentence {
+            margin-top: 2rem;
+            padding: 1rem 0;
+            font-size: 0.96rem;
+            color: #3f3f3f;
+            border-bottom: 1px solid #ece8e0;
+            border-top: 1px solid #ece8e0;
+            background: #fcfbf9;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+        }
+        .link-sentence a {
+            color: #7c5d3f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid #dccfc2;
+            padding-bottom: 1px;
+        }
+        .link-sentence a:hover {
+            color: #a47a53;
+            border-bottom-color: #a47a53;
+        }
+        .muted-link {
+            color: #7f7f7f;
+            text-decoration: underline 1px dotted #ccc;
+            font-size: 0.88rem;
+        }
+        .muted-link:hover {
+            color: #4b3d2f;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e9e4dc;
+            margin: 2rem 0 1.2rem;
+        }
+        .footer-note {
+            font-size: 0.8rem;
+            color: #8f8b84;
+            text-align: center;
+            margin-top: 2.5rem;
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 480px) {
+            .page { padding: 1.8rem 1rem 3rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { padding: 1.2rem 1.2rem; }
+            .card h2 { font-size: 1.05rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero">
+        <h1>百家乐 · 信息卡片</h1>
+        <div class="sub">再次访问 · 收藏 · 持续关注</div>
+    </div>
+
+    <!-- 用途卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <h2>🎴 用途·场景 <i>实用参考</i></h2>
+            <p>规则速查、牌路回顾、策略笔记——一个围绕<b>百家乐</b>精简设计的参考页，适合在桌面或手机端快速翻阅。</p>
+            <p>无论是练习观察、存档自己关注的牌局模式，还是单纯回顾基础选项，这里都保留了克制的信息密度。</p>
+            <div class="tag-list">
+                <span class="tag">牌路记录</span>
+                <span class="tag">规则备忘</span>
+                <span class="tag">术语卡片</span>
+                <span class="tag">概率简表</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>👥 适合人群</h2>
+            <p>刚接触<b>百家乐</b>、希望系统了解规则与常见问法的玩家；也适合偶尔参与、希望保持简单参考的爱好者。</p>
+            <p>内容不含诱导性话术，从信息组织角度出发，帮助重复访问者快速定位所需条目。长期使用可自行收藏。</p>
+        </div>
+
+        <div class="card">
+            <h2>📌 持续关注的价值</h2>
+            <p>当页面作为固定入口被收藏后，每次打开都是同一套清晰结构——不会因为频繁更新而打乱记忆位置。</p>
+            <p>对于反复查阅同一类信息的用户来说，稳定的卡片布局与窄版式能降低认知负担。这也是本站坚持极简、不堆砌元素的原因。</p>
+        </div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="link-sentence">
+        你需要一个结构固定的信息页，以便在需要时直接打开并定位内容——<a href="https://apps--baccarat.com">百家乐</a>正是基于这个目的组织起来的：无弹窗、无干扰模块，只有卡片、标签与简单层级。
+    </div>
+
+    <!-- FAQ 摘要 (非完整FAQ，仅做摘要) -->
+    <div class="faq-mini">
+        <h3>常见思路摘要</h3>
+        <div class="faq-item">
+            <strong>为什么不做成动态博客？</strong>
+            <p>重复访问者更需要“可预期”的版面，卡片式静态结构让每次打开都定位一致，适合收藏后快速查阅。</p>
+        </div>
+        <div class="faq-item">
+            <strong>适合在手机上反复看吗？</strong>
+            <p>窄正文宽度、卡片自适应，在手机浏览器里阅读体验接近原生应用；加入主屏幕后调用无干扰。</p>
+        </div>
+        <div class="faq-item">
+            <strong>内容会频繁调整吗？</strong>
+            <p>结构保持稳定，仅在有实质信息优化时才做小幅修订。不制造“必须每天回来”的错觉，尊重用户自己的节奏。</p>
+        </div>
+    </div>
+
+    <hr>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-size: 0.85rem; color: #6b6b6b;">卡片式 · 极简留白</span>
+        <a href="https://apps--baccarat.com" class="muted-link">百家乐</a>
+    </div>
+
+    <div class="footer-note">
+        — 信息页 · 不构成任何操作建议 —
+    </div>
+</div>
+</body>
+</html>
